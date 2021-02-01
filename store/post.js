@@ -70,7 +70,7 @@ export const actions = {
    */
   async updatePost ({ commit }, { id, formData }) {
     try {
-      await this.$axios.$post(`http://blog.garrykhr.ru/api/posts/update/${id}/text?text=${formData.text}`)
+      await this.$axios.$post(`https://blog.garrykhr.ru/api/posts/update/${id}/text?text=${formData.text}`)
 
     } catch (e) {
       commit('setError', e.response.data, { root: true })
@@ -82,7 +82,7 @@ export const actions = {
    */
   async removePost ({ commit }, id) {
     try {
-      await this.$axios.$post(`http://blog.garrykhr.ru/api/posts/delete/${id}`)
+      await this.$axios.$post(`https://blog.garrykhr.ru/api/posts/delete/${id}`)
 
       commit('removeOnePost', id)
     } catch (e) {
@@ -95,7 +95,7 @@ export const actions = {
    */
   async createPost ({ commit }, formData) {
     try {
-      this.$axios.$post(`http://blog.garrykhr.ru/api/posts/add/title?title=${formData.title}&text=${formData.text}`)
+      this.$axios.$post(`https://blog.garrykhr.ru/api/posts/add/title?title=${formData.title}&text=${formData.text}`)
       
     } catch (e) {
       commit('setError', e.response.data, { root: true })
@@ -107,7 +107,7 @@ export const actions = {
    */
   async setComment ({ commit, dispatch }, { id, formData}) {
     try {
-      await this.$axios.$post(`http://blog.garrykhr.ru/api/comment/add/${id}/title?title=${formData.title}&text=${formData.text}`)
+      await this.$axios.$post(`https://blog.garrykhr.ru/api/comment/add/${id}/title?title=${formData.title}&text=${formData.text}`)
       
       await dispatch('getOnePost', id)
     } catch (e) {
@@ -120,7 +120,7 @@ export const actions = {
    */
   async remove_comment ({ commit }, { post_id, comment_id}) {
     try {
-      await this.$axios.$post(`http://blog.garrykhr.ru/api/comment/delete/${post_id}/${comment_id}`)
+      await this.$axios.$post(`https://blog.garrykhr.ru/api/comment/delete/${post_id}/${comment_id}`)
 
       commit('remove_comment', comment_id)
     } catch (e) {
@@ -133,7 +133,7 @@ export const actions = {
    */
   async increaseViews ({ commit }, id) {
     try {
-      await this.$axios.$post(`http://blog.garrykhr.ru/api/views/${id}`)
+      await this.$axios.$post(`https://blog.garrykhr.ru/api/views/${id}`)
     } catch (e) {
       console.log(e)
     }

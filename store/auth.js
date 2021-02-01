@@ -21,7 +21,7 @@ export const mutations = {
 export const actions = {
   async login({ commit, dispatch }, formData) {
     try {
-      const response = await this.$axios.$post(`http://blog.garrykhr.ru/api/auth/auth/login?login=${formData.login}&password=${formData.password}`)
+      const response = await this.$axios.$post(`https://blog.garrykhr.ru/api/auth/auth/login?login=${formData.login}&password=${formData.password}`)
 
       const token = response.jwt
 
@@ -41,7 +41,7 @@ export const actions = {
   },
   async createUser({ commit }, formData) {
     try {
-      await this.$axios.$post(`http://blog.garrykhr.ru/api/auth/create/login?login=${formData.login}&password=${formData.password}`)
+      await this.$axios.$post(`https://blog.garrykhr.ru/api/auth/create/login?login=${formData.login}&password=${formData.password}`)
 
     } catch(e) {
       commit('setError', e.response.data, { root: true })
@@ -54,7 +54,7 @@ export const actions = {
       const cookies = Cookie.parse(cookieStr || '') || {}
       const token = cookies['jwt-token']
 
-      await this.$axios.$post(`http://blog.garrykhr.ru/api/auth/validate/jwt?jwt=${token}`)
+      await this.$axios.$post(`https://blog.garrykhr.ru/api/auth/validate/jwt?jwt=${token}`)
 
       dispatch('setToken', token)
 
