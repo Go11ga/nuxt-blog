@@ -44,7 +44,7 @@ export const actions = {
    */
   async getAll ({ commit }) {
     try {
-      const response = await this.$axios.$get('http://blog.garrykhr.ru/api/posts')
+      const response = await this.$axios.$get('https://blog.garrykhr.ru/api/posts')
 
       commit('setPosts', response)
     } catch (e) {
@@ -57,7 +57,7 @@ export const actions = {
    */
   async getOnePost ({ commit }, id) {
     try {
-      const post = await this.$axios.$get(`http://blog.garrykhr.ru/api/posts/${id}`)
+      const post = await this.$axios.$get(`https://blog.garrykhr.ru/api/posts/${id}`)
 
       commit('setOnePost', post.data)
     } catch (e) {
