@@ -1,0 +1,31 @@
+{
+  "name": "nuxt-blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "heroku-postbuild": "npm run build"
+  },
+  "engines" : {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.2",
+    "chart.js": "^2.9.4",
+    "cookie": "^0.4.1",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
+    "js-cookie": "^2.2.1",
+    "nuxt": "^2.14.6",
+    "vue-chartjs": "^3.5.1",
+    "vue-markdown": "^2.2.4"
+  },
+  "devDependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0"
+  }
+}
